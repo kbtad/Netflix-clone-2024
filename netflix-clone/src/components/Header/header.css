@@ -1,0 +1,62 @@
+.header_outer_container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(20, 20, 20);
+  /* background-color: transparent; */
+  height: 15vh;
+  color: white;
+  transition: all 0.5s;
+  transition-timing-function: ease-in;
+  z-index: 1;
+  /* background-color: red; */
+}
+.nav-black {
+  background-color: black;
+}
+.nav-list {
+  display: flex; /* Aligns items horizontally */
+  gap: 20px; /* Set the fixed gap between items */
+  list-style-type: none; /* Remove bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  align-items: center;
+}
+.nav-listL {
+  display: flex; /* Aligns items horizontally */
+  gap: 20px; /* Set the fixed gap between items */
+  list-style-type: none; /* Remove bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  align-items: center;
+}
+
+.header_container {
+  width: 100%;
+  display: flex;
+  padding-left: 5%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_left {
+  width: 140%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
+.header_right {
+  width: 100%;
+  padding-right: 5%;
+  /* display: flex; */
+  justify-content: flex-end;
+  justify-items: end;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
