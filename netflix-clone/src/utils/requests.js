@@ -1,5 +1,5 @@
-const API_KEY = import.meta.env.VITE_API_KEY;
-
+// const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
 // const API_KEY = "42d0a3dc0d034bac92dec60aef06fe1b";
 // const API_KEY = "c0e3762b784c812cf82758b2f5ccd8b8;";
 
