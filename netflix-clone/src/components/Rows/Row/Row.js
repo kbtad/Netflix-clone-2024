@@ -41,7 +41,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       autoplay: 1,
     },
   };
-  if (trailerUrl == "") {
+  if (trailerUrl === "") {
     setTrailerUrl(null);
     console.log(`trailer ${trailerUrl}`);
   }
@@ -55,7 +55,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
             key={index}
             src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
             alt={movie.name}
-            className={`row_poster ${isLargeRow && "row_posterLarger"}`}
+            className={`row_poster ${isLargeRow && "row_posterlarger"}`}
           />
         ))}
       </div>

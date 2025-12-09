@@ -1,4 +1,5 @@
 {
+  "homepage": "https://kbtad.github.io/Netflix-clone-2024/",
   "name": "netflix-clone",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.13.2",
+    "github-pages": "^3.0.2",
     "movie-trailer": "^3.2.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
@@ -21,6 +23,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
