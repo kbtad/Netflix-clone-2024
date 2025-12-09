@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Row.css";
 import axios from "../../../utils/axios";
-import movieTrailer from "movie-trailer"; // to get the trailer
-import YouTube from "react-youtube"; // to get the movie ID
+import movieTrailer from "movie-trailer";
+import YouTube from "react-youtube";
 const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState([]);
-  const base_url = "https://image.tmdb.org/t/p/original"; // base url to get the images from the documentation
+  const base_url = "https://image.tmdb.org/t/p/original";
   useEffect(() => {
     (async () => {
       try {
@@ -18,7 +18,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         console.log("error", error);
       }
     })();
-  }, [fetchUrl]); // depen array 
+  }, [fetchUrl]);
   const handleClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
@@ -27,7 +27,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         (url) => {
           console.log(url);
           const urlParams = new URLSearchParams(new URL(url).search);
-          console.log(urlParams);
           console.log(urlParams.get("v"));
           setTrailerUrl(urlParams.get("v"));
         }
@@ -49,17 +48,15 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     <div className="row">
       <h3> {title} </h3>
       <div className="row_posters">
-        {movies?.map((movie, index) => (    // to print for each movie 20 posters map eyaderege
+        {movies?.map((movie, index) => (
           <img
             onClick={() => handleClick(movie)}
-            key={index}
-            src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
-            alt={movie.name}
-            className={`row_poster ${isLargeRow && "row_posterlarger"}`}
+            key={index} src={`${base_url}${ isLargeRow ? movie.poster_path : movie.backdrop_path }`}  alt={movie.name}
+            className={`row_poster ${isLargeRow && "row_posterLarger"}`}
           />
         ))}
       </div>
-      <div style={{ padding: "10px" }}>
+      <div style={{ padding: "40px" }}>
         {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
       </div>
     </div>
