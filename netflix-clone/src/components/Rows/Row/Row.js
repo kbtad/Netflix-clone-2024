@@ -5,7 +5,7 @@ import movieTrailer from "movie-trailer";
 import YouTube from "react-youtube";
 const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
-  const [trailerUrl, setTrailerUrl] = useState([]);
+  const [trailerUrl, setTrailerUrl] = useState("");
   const base_url = "https://image.tmdb.org/t/p/original";
   useEffect(() => {
     (async () => {
@@ -23,14 +23,12 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movieTrailer(movie?.title || movie.name || movie.orginal_name).then(
-        (url) => {
-          console.log(url);
+      movieTrailer(movie?.title || movie.name || movie.orginal_name)
+        .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
-          console.log(urlParams.get("v"));
           setTrailerUrl(urlParams.get("v"));
-        }
-      );
+        })
+        .catch((error) => console.log(error));
     }
   };
   const opts = {
@@ -40,13 +38,13 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       autoplay: 1,
     },
   };
-  if (trailerUrl === "") {
-    setTrailerUrl(null);
-    console.log(`trailer ${trailerUrl}`);
-  }
+  // if (trailerUrl === "") {
+  //   setTrailerUrl(null);
+  //   console.log(`trailer ${trailerUrl}`);
+  // }
   return (
     <div className="row">
-      <h3> {title} </h3>
+      <h2> {title} </h2>
       <div className="row_posters">
         {movies?.map((movie, index) => (
           <img

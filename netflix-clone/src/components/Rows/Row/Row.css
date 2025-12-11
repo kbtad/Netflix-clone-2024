@@ -1,17 +1,26 @@
-.row_poster
+/* .row_poster
 {
     width: 100%;
     object-fit: contain;
     max-height: 100px;
     transition:transform 450ms;
     margin-right: 10px;
+} */
+ .row_poster {
+  max-height: 180px;
+  width: 280px;          /* controls uniform width */
+  object-fit: cover;     /* crops so sizes look equal */
+  margin-right: 10px;
+  transition: transform 350ms;
 }
+
 .row_posters
 {
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    padding:20px;
+    padding:0;
+    margin: 0; 
 }
 .row_posters::-webkit-scrollbar{
     display: none;
@@ -21,12 +30,20 @@
 }
 .row_posterLarge
 {
-    max-height: 250px;
+    max-height: 150px;
 }
 .row_posterLarge:hover{
     transform: scale(1.09);
 }
 .row{
-    margin-left: 20px;
+    margin-left: 10px;
     color:black;
+     font-size: 24px;
+       font-weight: 600;  
 }
+/* .row > h2 {
+  font-size: 24px;   /* increase the size */
+  /* font-weight: 600;  bold Netflix style */
+  /* margin-left: 10px; optional small indent */
+        /* Netflix white text */
+/* }  */
